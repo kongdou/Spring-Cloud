@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: ApiService
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: test
+    password: 123456
+  #zipkin:
+  #  base-url: http://localhost:9998
+
+
+server:
+  port: 8092
+
+eureka:
+  client:
+    serviceUrl:
+      defalutZone: http://localhost:8761/eureka/
+      
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+            
