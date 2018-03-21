@@ -1,0 +1,26 @@
+spring:
+  application:
+     name: ZuulService  # Service registers under this name
+
+server:
+    port: 8765
+    compression:
+        enabled: true
+
+zuul:
+  ignoredServices: "*"  #忽略所有服务
+  routes:
+    resraurantapi:
+      path: /restaurantapi/**
+      serviceId: RestaurantService
+      stripPrefix: true
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 3 #向Eureka Server 发送心跳检测的时间，生产上建议采用默认
+    leaseExpirationDurationInSeconds: 90 #服务失效时间,如果Eureka Server在90秒内没有收到Renew操作，将会把服务剔除
+    metadataMap:
+      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}
+      serviceUrl:
+        defaultZone: http://localhost:8761/eureka/
+      fetchRegistry: false
+    
