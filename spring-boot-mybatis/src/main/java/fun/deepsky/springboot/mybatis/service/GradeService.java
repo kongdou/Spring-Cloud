@@ -17,4 +17,8 @@ public class GradeService{
 	public List<Grade> getByGradeNm(String name){
         return gradeMapper.getByGradeNm(name);
     }
+	
+	public void save(Grade grade){
+        gradeMapper.save(grade);
+    }
 }
