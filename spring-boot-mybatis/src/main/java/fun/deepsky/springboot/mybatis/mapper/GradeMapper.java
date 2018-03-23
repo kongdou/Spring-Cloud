@@ -13,7 +13,7 @@ public interface GradeMapper {
 	@Select("select * from grade where gradename=#{name}")
 	public List<Grade> getByGradeNm(String name);
 	
-	@Insert("insert into grade(gradename,teacherid) values(#{gradename},#{teacherid}")
+	@Insert("insert into grade(gradename,teacherid) values(#{gradeName},#{teacherId})")
 	@Options(useGeneratedKeys=true,keyColumn="id",keyProperty="id")
 	public void save(Grade grade);
 }

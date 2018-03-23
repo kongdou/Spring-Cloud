@@ -23,4 +23,12 @@ public class GradeController {
 		return gradeService.getByGradeNm(name);
 	}
 	
+	@RequestMapping(value="/add")
+	public String add() {
+		Grade grade = new Grade();
+		grade.setGradeName("测试5");
+		grade.setTeacherId(16);
+		gradeService.save(grade);
+		return "success";
+	}
 }
