@@ -31,4 +31,16 @@ public class GradeController {
 		gradeService.save(grade);
 		return "success";
 	}
+	
+	@RequestMapping(value="/getAll",method=RequestMethod.GET)
+	public List<Grade> getAll(@RequestParam("num") int pageNum,@RequestParam("size") int pageSize) {
+		try {
+			return gradeService.getAll(pageNum, pageSize);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+		
+	}
 }

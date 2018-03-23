@@ -16,5 +16,8 @@ public interface GradeMapper {
 	@Insert("insert into grade(gradename,teacherid) values(#{gradeName},#{teacherId})")
 	@Options(useGeneratedKeys=true,keyColumn="id",keyProperty="id")
 	public void save(Grade grade);
+	
+	@Select("select * from grade")
+	public List<Grade> getAll();
 }
 
