@@ -1,4 +1,4 @@
-﻿简单定时示例
+简单定时示例
 1.Application增加：@EnableScheduling
 2.方法名增加@Scheduled
 
