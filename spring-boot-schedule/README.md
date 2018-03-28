@@ -3,4 +3,4 @@
 2.方法名增加@Scheduled
 
 Spring @Scheduled定时任务的fixedRate,fixedDelay,cron执行差异
-![Alt text](https://github.com/kongdou/Spring-Cloud/tree/master/imgs/@scheduled.png)
+![fixedRate,fixedDelay,cron差异](https://github.com/kongdou/Spring-Cloud/tree/master/imgs/@scheduled.png)
