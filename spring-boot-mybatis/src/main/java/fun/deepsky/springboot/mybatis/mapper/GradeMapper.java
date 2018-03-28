@@ -2,6 +2,7 @@ package fun.deepsky.springboot.mybatis.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
@@ -19,5 +20,8 @@ public interface GradeMapper {
 	
 	@Select("select * from grade")
 	public List<Grade> getAll();
+	
+	@Delete("delete from grade")
+	public void deleteAll();
 }
 

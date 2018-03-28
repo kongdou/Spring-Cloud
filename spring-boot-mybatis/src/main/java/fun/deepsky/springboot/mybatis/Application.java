@@ -9,7 +9,6 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 @SpringBootApplication
 @MapperScan("fun.deepsky.springboot.mybatis.mapper")
 public class Application {
-
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class,args);
 	}
