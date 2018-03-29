@@ -5,14 +5,16 @@
 
 Zuul限流spring-cloud-zuul-ratelimit
 ===
-#pom.xml增加依赖
+1.pom.xml增加依赖
+---
 		<dependency>
   			<groupId>com.marcosbarbero.cloud</groupId>
   			<artifactId>spring-cloud-zuul-ratelimit</artifactId>
   			<version>1.3.4.RELEASE</version>
 		</dependency>
 
-#配置application.yml文件
+2配置application.yml文件
+---
 zuul:
   ignoredServices: "*"  #忽略所有服务
   routes:
@@ -32,7 +34,7 @@ zuul:
       type:
        - user
        - origin
-       - url·
+       - url
 
 调用15次：
 http://localhost:8765/restaurantapi/restaurants?name=Meurice
