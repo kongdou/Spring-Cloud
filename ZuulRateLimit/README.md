@@ -1,7 +1,7 @@
 ﻿准备：
 ===
-1.启动EurenaService、RestaurantService、zuulService
-2.访问：http://localhost:8765/restaurantapi/restaurants/1 路由到 http://localhost:8081/restaurants/1
+	1.启动EurenaService、RestaurantService、zuulService
+	2.访问：http://localhost:8765/restaurantapi/restaurants/1 路由到 http://localhost:8081/restaurants/1
 
 Zuul限流spring-cloud-zuul-ratelimit
 ===
