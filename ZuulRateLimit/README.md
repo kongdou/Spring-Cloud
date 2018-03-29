@@ -22,7 +22,7 @@ Zuul限流spring-cloud-zuul-ratelimit
 	      path: /restaurantapi/**
 	      serviceId: RestaurantService
 	      stripPrefix: true
-	  ratelimit:
+	  `ratelimit:
 	    repository: IN_MEMORY
 	    enabled: true
 	    key-prefix: your-prefix
@@ -34,7 +34,7 @@ Zuul限流spring-cloud-zuul-ratelimit
 	      type:
 	       - user
 	       - origin
-	       - url
+	       - url`
 调用15次：
 http://localhost:8765/restaurantapi/restaurants?name=Meurice
 前十次正常显示：
