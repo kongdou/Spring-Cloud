@@ -15,27 +15,26 @@ Zuul限流spring-cloud-zuul-ratelimit
 
 2配置application.yml文件
 ---
-zuul:
-  ignoredServices: "*"  #忽略所有服务
-  routes:
-    restaurantapi:
-      path: /restaurantapi/**
-      serviceId: RestaurantService
-      stripPrefix: true
-  ·ratelimit:
-    repository: IN_MEMORY
-    enabled: true
-    key-prefix: your-prefix
-    behind-proxy: true
-    default-policy: 
-      limit: 10
-      quota: 1000
-      refresh-interval: 60 #刷新时间窗口的时间，默认值 (秒)
-      type:
-       - user
-       - origin
-       - url
-
+	zuul:
+	  ignoredServices: "*"  #忽略所有服务
+	  routes:
+	    restaurantapi:
+	      path: /restaurantapi/**
+	      serviceId: RestaurantService
+	      stripPrefix: true
+	  ratelimit:
+	    repository: IN_MEMORY
+	    enabled: true
+	    key-prefix: your-prefix
+	    behind-proxy: true
+	    default-policy: 
+	      limit: 10
+	      quota: 1000
+	      refresh-interval: 60 #刷新时间窗口的时间，默认值 (秒)
+	      type:
+	       - user
+	       - origin
+	       - url
 调用15次：
 http://localhost:8765/restaurantapi/restaurants?name=Meurice
 前十次正常显示：
