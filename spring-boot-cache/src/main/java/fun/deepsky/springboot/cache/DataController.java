@@ -1,7 +1,9 @@
 package fun.deepsky.springboot.cache;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -15,13 +17,15 @@ public class DataController {
 		return personService.save(person);
 	}
 
-	@RequestMapping("/able")
-	public Person cacheable(Person person) {
+	@RequestMapping(value="/get",method=RequestMethod.GET)
+	public Person cacheable(@Param("id") Long id) {
+		Person person = new Person();
+		person.setId(id);
 		return personService.findOne(person);
 	}
 
-	@RequestMapping("/evit")
-	public String evit(Long id) {
+	@RequestMapping(value="/evit",method=RequestMethod.GET)
+	public String evit(@Param("id") Long id){
 		personService.remove(id);
 		return "ok";
 	}
