@@ -13,7 +13,6 @@ Spring Boot 集成 Swagger
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>2.2.2</version>
 		</dependency>
-		
 2.新增Swagger2类
 ---
 	@Configuration
