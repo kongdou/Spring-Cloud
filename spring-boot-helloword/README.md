@@ -31,7 +31,10 @@ Spring Boot基础
 	方式一：直接在IDE中运行
 	方式二：根目录下运行 mvn spring-boot:run
 	方式三：install安装，java -jar xxx.jar
-
+4.运行
+---
+	http://localhost:5002/index
+	
 Spring Boot配置文件
 ===
 
@@ -45,5 +48,5 @@ Spring Boot配置文件
 多环境配置
 ---
 	application.properties
-	  spring.profile.active=test
+	spring.profile.active=test
 	application-{profile}.properties
