@@ -1,0 +1,10 @@
+spring:
+  data:
+    elasticsearch:
+      cluster-name: vechile_cluster
+      cluster-nodes: localhost:9300,127.0.0.1:9300
+      local: true
+      repositories:
+        enabled: true
+  application:
+    name: spring-boot-es
