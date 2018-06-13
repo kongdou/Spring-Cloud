@@ -1,0 +1,16 @@
+myauth:
+  eureka:
+    username: test
+    password: 123456
+    
+server:
+  port: 1112
+
+spring:
+  application:
+    name: service-provider
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${myauth.eureka.username}:${myauth.eureka.password}@localhost:1111/eureka/
