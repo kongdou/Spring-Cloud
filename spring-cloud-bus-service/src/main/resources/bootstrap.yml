@@ -1,0 +1,35 @@
+myauth:
+  eureka:
+    username: test
+    password: 123456
+    
+spring:
+  application:
+    name: service-1
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: test
+    password: 123456
+  cloud:
+    config:
+      name: config
+      profile: dev
+      discovery: 
+        enabled: true
+        serviceId: CONFIG-SERVER
+      #uri: http://localhost:2222/
+    
+server:
+  port: 7001
+
+management:
+  security:
+    enabled: false
+    
+
+eureka:
+ client:
+   serviceUrl:
+     defaultZone: http://${myauth.eureka.username}:${myauth.eureka.password}@localhost:8761/eureka/
+

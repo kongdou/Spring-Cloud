@@ -1,21 +1,16 @@
-# Yureka Server Configuration
 server:
-  port: ${vcap.application.port:8761}   # HTTP port
-  
+  port: 8761
+
 eureka:
   instance:
     hostname: localhost
   client:
-    registerWithEureka: false
-    fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-  server:
-    waitTimeInMsWhenSyncEmpty: 0
-
-# Discovery Server Dashboard uses FreeMarker.  Don't want Thymeleaf templates
-spring:
-  thymeleaf:
-    enabled: false     # Disable Thymeleaf
+    register-with-eureka: false
+    fetch-registry: false
     
-    
+security:
+  basic:
+    enabled: true
+  user:
+    name: test
+    password: 123456

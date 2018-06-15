@@ -1,19 +1,23 @@
+myauth:
+  eureka:
+    username: test
+    password: 123456
+    
 server:
   port: 2222
   
 spring:
-  profiles: 
-    active: native
   application:
     name: config-server
   cloud:
     config:
-      #label: master 默认master
       server:
-        native:
-          searchLocations: classpath:/config
-        #git:
-        #  uri: https://github.com/kongdou/configs
-        #  searchPaths: test/config-repo
-        #  username: ***********
-        #  password: ***********
+        git:
+          uri: https://github.com/kongdou/configs
+          searchPaths: test/config-repo
+          username: zhao.xiao.jie@outlook.com
+          password: xiaojie@839
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${myauth.eureka.username}:${myauth.eureka.password}@localhost:8761/eureka/
