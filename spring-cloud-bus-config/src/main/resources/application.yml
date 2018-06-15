@@ -1,0 +1,19 @@
+server:
+  port: 2222
+  
+spring:
+  profiles: 
+    active: native
+  application:
+    name: config-server
+  cloud:
+    config:
+      #label: master 默认master
+      server:
+        native:
+          searchLocations: classpath:/config
+        #git:
+        #  uri: https://github.com/kongdou/configs
+        #  searchPaths: test/config-repo
+        #  username: ***********
+        #  password: ***********
