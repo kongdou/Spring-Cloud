@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      profile: dev
+      label: master #可省略
+      uri: http://localhost:2222/
+server:
+  port: 2223
+  
+management:
+  security:
+    enabled: false
