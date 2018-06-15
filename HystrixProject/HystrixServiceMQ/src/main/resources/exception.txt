@@ -1,5 +1,0 @@
-com.rabbitmq.client.ShutdownSignalException: connection error; protocol method
-
-解决：
-设置rabbitmq的/权限
-
