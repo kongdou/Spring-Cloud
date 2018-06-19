@@ -9,14 +9,23 @@ server:
 spring:
   application:
     name: config-server
+  profiles:
+    active: subversion
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/kongdou/configs
-          searchPaths: test/config-repo
-          username: zhao.xiao.jie@outlook.com
-          password: xiaojie@839
+        #git:
+          #uri: http://10.10.68.154:8088/configs
+          #searchPaths: test/config-repo
+          #username: *************
+          #password: *************
+        svn:
+          uri: http://10.10.68.154:8088/svn/cloudconfig
+          default-label: config
+          searchPaths: config
+          username: zhaoxiaojie
+          password: zhaoxiaojie
+          basedir: c:/config
 eureka:
   client:
     serviceUrl:

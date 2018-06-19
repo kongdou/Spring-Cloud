@@ -15,13 +15,13 @@ spring:
     config:
       name: config
       profile: dev
-      discovery: 
-        enabled: true
-        serviceId: CONFIG-SERVER
-      #uri: http://localhost:2222/
+      #discovery: 
+      #  enabled: true
+      #  serviceId: CONFIG-SERVER
+      uri: http://localhost:2222/
     
 server:
-  port: 7001
+  port: 7002
 
 management:
   security:

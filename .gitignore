@@ -1,8 +1,14 @@
-.metadata/
+
+spring-cloud-bus-config/.classpath
+spring-cloud-bus-config/.project
+*.prefs
 *.class
+*.MF
+
 *.jar
 .settings/
 .mymetadata
 target/
 .classpath
 .project
+*.MF
