@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @EnableDiscoveryClient
 @RestController
-public class Application {
+public class ClientApplication {
 
 	@Autowired
 	LoadBalancerClient loadBalancer;
@@ -22,7 +22,8 @@ public class Application {
 	
 	@RequestMapping("/discovery")
 	public String disCovery() {
-		return loadBalancer.choose("tomcat").getUri().toString();
+		return "服务发现:"+loadBalancer.choose("Consul-Server").getUri().toString();
+		//return discoveryClient.getInstances("Consul-Server").get(0).getUri().toString();
 	}
 	
 	  /** 
@@ -30,11 +31,12 @@ public class Application {
      */  
     @RequestMapping("/services")  
     public Object services() {  
-        return discoveryClient.getInstances("tomcat");  
+        return discoveryClient.getInstances("Consul-Server");  
     }
 	
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(ClientApplication.class, args);
 	}
+
 	
 }
